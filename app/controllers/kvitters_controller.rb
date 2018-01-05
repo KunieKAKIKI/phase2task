@@ -37,7 +37,7 @@ class KvittersController < ApplicationController
   end
   
   def destroy
-    @blog.destroy
+    @kvitter.destroy
     redirect_to kvitters_path, notice: "つぶやきを削除しました！"
   end
   
