@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+
+development:
+  <<: *default
+  database: cloneapp_development
+
+test:
+  <<: *default
+  database: cloneapp_test
+
+production:
+  <<: *default
+  database: cloneapp_production
+  username: cloneapp
+  password: <%= ENV['CLONEAPP_DATABASE_PASSWORD'] %>

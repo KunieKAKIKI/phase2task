@@ -1,0 +1,8 @@
+.panel-title {
+  text-align: left;
+}
+
+.panel-body {
+  text-align: left;
+  word-break: keep-all;
+}

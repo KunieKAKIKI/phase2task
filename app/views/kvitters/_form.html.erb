@@ -1,0 +1,20 @@
+<%= form_with(model: @kvitter, local: true, url: choose_new_or_edit) do |form| %>
+  <% if @kvitter.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <div id="error_explanation">
+        <h2><%= @kvitter.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @kvitter.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="input_area"><%= form.text_area :content, :size=>"100×60" %></div>
+  <div class="submit_button">
+    <input class="btn btn-primary" type="submit" value="投稿">
+  </div>
+<% end %>
+
+<%= link_to "つぶやき一覧表示", kvitters_path %>

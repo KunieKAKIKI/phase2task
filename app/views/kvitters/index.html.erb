@@ -1,0 +1,22 @@
+<h1>つぶやき一覧</h1>
+
+<p><%= notice %></p>
+
+<% @kvitters.each do |kvitter| %>
+<ul class="row_1">
+  <li class="col-sm-12 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">（アカウント）</h4>
+      </div>
+      <div class="panel-body">
+        <p><%= kvitter.content %></p>
+        <p class="button_area">
+          <button type="button" class="btn btn-warning"><%= link_to '編集',edit_kvitter_path(kvitter.id),data: { confirm: '本当に編集していいですか？' } %></button>
+          <button type="button" class="btn btn-danger"><%= link_to '削除',kvitter_path(kvitter.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></button>
+        </p>
+      </div>
+      </div>
+  </li>
+</ul>
+<% end %>
